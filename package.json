@@ -1,0 +1,17 @@
+{
+  "name": "1",
+  "version": "1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": ""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql2": "^2.2.5",
+    "console.table": "^0.10.0",
+    "inquirer": "^6.3.1"
+  }
+}
