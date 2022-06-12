@@ -109,3 +109,15 @@ function viewalldepartments() {
       prqu();
     });
   }
+
+
+
+
+
+
+
+
+
+
+  
+prqu()
