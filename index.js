@@ -82,3 +82,30 @@ function prqu() {
     });
 
 }
+
+
+function viewalldepartments() {
+    var query = "SELECT department.name AS Department, department.id AS Id FROM employees.department ORDER BY department.id asc";
+   db.query(query, function (err, res) {
+      console.table(res);
+      prqu();
+    });
+  }
+  
+  function viewallemployees() {
+    var query =
+      "SELECT department.name AS department, roles.title AS jobtitle, roles.salary, employee.first_name AS name, employee.last_name AS lastname, employee.id, employee.manager_id AS reports_to_employee_with_this_id FROM department INNER JOIN roles ON roles.department_id = department.id INNER JOIN employee ON employee.role_id = roles.id";
+    db.query(query, function (err, res) {
+      console.table(res);
+      prqu();
+    });
+  }
+  
+  function viewallroles() {
+    var query =
+      "SELECT roles.title, roles.id, department.name AS department, roles.salary FROM department INNER JOIN roles ON roles.department_id = department.id;";
+    db.query(query, function (err, res) {
+      console.table(res);
+      prqu();
+    });
+  }
