@@ -55,6 +55,21 @@ function prqu() {
                 viewallemployees();
 
                 break;
+
+            case "add new department":
+
+                 addnewdepartment();
+
+                break;
+
+            
+            case "add new role":
+
+                addnewrole();
+    
+                 break;
+
+
             
             case "add new employee":
                 
@@ -62,17 +77,8 @@ function prqu() {
 
                 break;
 
-            case "add new role":
 
-                addnewrole();
 
-                break;
-            
-            case "add new department":
-            
-               addnewdepartment();
-               
-               break;
             
             case "update existing employee's role":
 
@@ -115,7 +121,26 @@ function viewalldepartments() {
     });
   }
 
+  function addnewdepartment() {
+    inquirer
+      .prompt([
+        {
+          name: "departmentname",
+          type: "input",
+          message: "enter the department name",
+        },
+      ])
+      .then(function (answer) {
+        var query = "INSERT INTO department (name) VALUE (?)";
+        db.query(query, answer.departmentname, function (err, res) {
+          if (err) throw err;
 
+          console.log("Success");
+          
+          prqu();
+        });
+      });
+  }
 
 
 
