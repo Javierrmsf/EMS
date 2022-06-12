@@ -30,6 +30,7 @@ function prqu() {
             "view all departments",
             "view all roles",
             "view all employees",
+            "add new department",
             "add new role",
             "add new employee",
             "update existing employee's role",
@@ -96,7 +97,7 @@ function prqu() {
 
 
 function viewalldepartments() {
-    var query = "SELECT department.name AS Department, department.id AS Id FROM employees.department ORDER BY department.id asc";
+    var query = "SELECT department.name AS Department, department.id AS Id FROM maindatabase.department ORDER BY department.id asc";
    db.query(query, function (err, res) {
       console.table(res);
       prqu();
