@@ -13,6 +13,11 @@ const db = mysql.createConnection({
     database: "maindatabase"
 });
 
+function graphic(){
+    console.table(grfc);
+  
+  }
+
 function prqu() {
 
     inquirer
@@ -119,5 +124,5 @@ function viewalldepartments() {
 
 
 
-  
+graphic()
 prqu()
